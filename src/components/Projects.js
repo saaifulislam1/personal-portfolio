@@ -1,122 +1,95 @@
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import "./ProjectShowcase.css";
+
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
-import colorSharp2 from "../assets/img/color-sharp2.png";
-import "animate.css";
-import TrackVisibility from "react-on-screen";
 
-export const Projects = () => {
-  const projects = [
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-  ];
+const projects = [
+  {
+    title: "Portfolio Website",
+    images: [projImg1, projImg2, projImg3],
+    liveLink: "https://your-portfolio-link.com",
+    description:
+      "A modern, responsive portfolio site built with React and deployed on Netlify.",
+  },
+  {
+    title: "Portfolio Website",
+    images: [projImg1, projImg2, projImg3],
+    liveLink: "https://your-portfolio-link.com",
+    description:
+      "A modern, responsive portfolio site built with React and deployed on Netlify.",
+  },
+  {
+    title: "Portfolio Website",
+    images: [projImg1, projImg2, projImg3],
+    liveLink: "https://your-portfolio-link.com",
+    description:
+      "A modern, responsive portfolio site built with React and deployed on Netlify.",
+  },
+  {
+    title: "Portfolio Website",
+    images: [projImg1, projImg2, projImg3],
+    liveLink: "https://your-portfolio-link.com",
+    description:
+      "A modern, responsive portfolio site built with React and deployed on Netlify.",
+  },
+];
 
+export default function Projects() {
   return (
-    <section className="project" id="projects">
-      <Container>
-        <Row>
-          <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
-                >
-                  <h2>Projects</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Nav
-                      variant="pills"
-                      className="nav-pills mb-5 justify-content-center align-items-center"
-                      id="pills-tab"
-                    >
-                      {/* <Nav.Item>
-                        <Nav.Link eventKey="first">Rag AI</Nav.Link>
-                      </Nav.Item> */}
-                      {/* <Nav.Item>
-                        <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                      </Nav.Item> */}
-                    </Nav>
-                    <Tab.Content
-                      id="slideInUp"
-                      className={
-                        isVisible ? "animate__animated animate__slideInUp" : ""
-                      }
-                    >
-                      <Tab.Pane eventKey="first">
-                        <Row>
-                          {projects.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
-                        </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="section">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Tab.Container>
-                </div>
+    <section className="project-section">
+      <h2 className="section-title">My Projects</h2>
+      <div className="projects-container">
+        {projects.map((project, index) => (
+          <div className="project-card" key={index}>
+            <div className="carousel-wrapper">
+              <Carousel
+                showThumbs={false}
+                infiniteLoop
+                autoPlay
+                showStatus={false}
+                renderArrowPrev={(clickHandler, hasPrev) =>
+                  hasPrev && (
+                    <button className="arrow-prev" onClick={clickHandler}>
+                      ‹
+                    </button>
+                  )
+                }
+                renderArrowNext={(clickHandler, hasNext) =>
+                  hasNext && (
+                    <button className="arrow-next" onClick={clickHandler}>
+                      ›
+                    </button>
+                  )
+                }
+              >
+                {project.images.map((img, i) => (
+                  <div key={i} className="carousel-image-wrapper">
+                    <img src={img} alt={`Project ${index} Slide ${i}`} />
+                    <div className="image-overlay"></div>
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+            <div className="project-info">
+              <h3>{project.title}</h3>
+              {project.description && (
+                <p className="project-desc">{project.description}</p>
               )}
-            </TrackVisibility>
-          </Col>
-        </Row>
-      </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="live-btn"
+              >
+                Live Demo
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
-};
+}
