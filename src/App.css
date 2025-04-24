@@ -771,7 +771,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 
   .live-btn:hover {
-    background-color: #0052cc;
+    background-color: #8a1981;
+    color:white
   }
 
   /* Responsive */
@@ -921,5 +922,51 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     font-size: 0.95rem;
     margin-top: 10px;
   }
+
+  /* download cv */
+
+  .download-cv-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #0d0d0d;
+    color: #fff;
+  }
+  
+  .download-cv-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #93348B;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #9c1491;
+    transform: translateY(-2px);
+    color: white;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .download-cv-section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .download-btn {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  }
+  
 
 

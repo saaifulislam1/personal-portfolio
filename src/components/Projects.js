@@ -44,7 +44,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="project-section">
+    <section className="project-section" id="projects">
       <h2 className="work-title" data-aos="fade-down">
         <span className="title-highlight">Selected Project</span>
       </h2>

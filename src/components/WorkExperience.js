@@ -81,7 +81,7 @@ const WorkExperience = () => {
   }, []);
 
   return (
-    <section className="work-section">
+    <section className="work-section" id="work">
       <h2 className="work-title" data-aos="fade-down">
         <span className="title-highlight">Work Experience</span>
       </h2>
