@@ -81,6 +81,48 @@ p.success {
 p.danger {
 	color: red;
 }
+
+.logo-text {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 1px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo-text:hover {
+  transform: scale(1.03);
+  text-shadow: 0px 0px 10px rgba(0, 191, 255, 0.6);
+}
+
+.logo-symbol {
+  color: #00bfff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.logo-text:hover .logo-symbol {
+  transform: rotate(5deg);
+}
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  .logo-symbol {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
@@ -643,6 +685,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .section-title {
     font-size: 2.5rem;
     margin-bottom: 40px;
+    background: linear-gradient(to right, #AA367C, #4A2FBD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
   }
 
   .projects-container {
@@ -754,46 +800,94 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: #0f0f0f;
     color: #ffffff;
     padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
   }
   
   .work-title {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 50px;
+    position: relative;
+  }
+  
+  .title-highlight {
+    background: linear-gradient(to right, #AA367C, #4A2FBD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+  }
+  
+  .work-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin: 10px auto 0;
+    background: linear-gradient(to right, #AA367C, #4A2FBD);
+    border-radius: 2px;
+  }
+  
+  .timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 3px solid rgba(255, 255, 255, 0.1);
   }
   
   .work-entry {
-    margin-bottom: 40px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 30px;
+    margin-bottom: 60px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .work-entry::before {
+    content: '';
+    position: absolute;
+    left: -11px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(135deg, #AA367C, #4A2FBD);
+    border-radius: 50%;
+    border: 2px solid #fff;
   }
   
   .company-name {
-    font-size: 1.75rem;
-    color: #93348b;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
   }
   
   .work-duration {
     font-style: italic;
-    color: #aaa;
+    color: #999;
     margin-bottom: 20px;
   }
   
   .project-details {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(170, 54, 124, 0.2);
   }
   
   .project-title {
     font-size: 1.3rem;
     color: #ffffff;
-    margin: 10px 0;
+    margin-bottom: 8px;
   }
   
   .project-link {
     color: #4a90e2;
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
     display: inline-block;
     margin-bottom: 10px;
@@ -811,13 +905,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .project-bullets li {
     margin-bottom: 8px;
     line-height: 1.5;
+    position: relative;
+  }
+  
+  .project-bullets li::before {
+    content: "•";
+    color: #AA367C;
+    position: absolute;
+    left: -18px;
+    font-size: 1.2rem;
   }
   
   .tools-used {
     color: #ccc;
     font-size: 0.95rem;
+    margin-top: 10px;
   }
-  
-
 
 

@@ -40,7 +40,9 @@ export const Skills = () => {
         <div className="row">
           <div className="col-12">
             <div className="skill-bx wow zoomIn">
-              <h2>Skills</h2>
+              <h2 className="work-title" data-aos="fade-down">
+                <span className="title-highlight">Skills</span>
+              </h2>
               <p>
                 I bring a strong command of modern web development tools and
                 frameworks, with a focus on building performant, <br></br>

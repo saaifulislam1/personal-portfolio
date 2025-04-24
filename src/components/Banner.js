@@ -91,7 +91,13 @@ export const Banner = () => {
                     design and development teams.
                   </p>
 
-                  <button onClick={() => console.log("connect")}>
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("connect")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                  >
                     Let’s Connect <ArrowRightCircle size={25} />
                   </button>
                 </div>

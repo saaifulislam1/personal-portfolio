@@ -45,7 +45,9 @@ const projects = [
 export default function Projects() {
   return (
     <section className="project-section">
-      <h2 className="section-title">Selected Projects</h2>
+      <h2 className="work-title" data-aos="fade-down">
+        <span className="title-highlight">Selected Project</span>
+      </h2>
       <div className="projects-container">
         {projects.map((project, index) => (
           <div className="project-card" key={index}>
