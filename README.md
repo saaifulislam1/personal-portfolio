@@ -1,8 +1,8 @@
 # Personal Portfolio Website in React
 
-Leave a Star if 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Leave a star if you found this helpful
 ![image](https://github.com/user-attachments/assets/276c66ba-e3bf-4ba4-ba3b-eeb02cf6b386)
 
 
