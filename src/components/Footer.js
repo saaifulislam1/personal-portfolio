@@ -10,11 +10,11 @@ export const Footer = () => {
     <footer className="footer">
       <Container>
         <Row className="align-items-center">
-          <MailchimpForm />
-          <Col size={12} sm={6}>
+          {/* <MailchimpForm /> */}
+          {/* <Col size={12} sm={6}>
             <img src={logo} alt="Logo" />
-          </Col>
-          <Col size={12} sm={6} className="text-center text-sm-end">
+          </Col> */}
+          <Col size={12} sm={6} className="text-center pt-4 text-sm-end">
             <div className="social-icon">
               <a href="#">
                 <img src={navIcon1} alt="Icon" />
@@ -26,7 +26,7 @@ export const Footer = () => {
                 <img src={navIcon3} alt="Icon" />
               </a>
             </div>
-            <p>Copyright 2022. All Rights Reserved</p>
+            <p>Copyright 2025. All Rights Reserved by Saiful Islam Rifat</p>
           </Col>
         </Row>
       </Container>

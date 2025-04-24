@@ -475,6 +475,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   padding: 60px 0 200px 0;
 }
+@media (max-width: 768px) {
+  .form-contact {
+    margin-left: 12px;
+    padding-right: 12px;
+  }
+}
 .contact img {
   width: 92%;
 }
@@ -625,109 +631,115 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 
-/* mine */
+/* mine project compo css */
 
-.project-section {
-  padding: 80px 20px;
-  background-color: black;
-  color: white;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-.projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-}
-
-.project-card {
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 500px;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.02);
-}
-
-.carousel-image-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel-image-wrapper img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.carousel-image-wrapper:hover img {
-  transform: scale(1.05);
-}
-
-.image-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-  
-}
-
-.carousel-image-wrapper:hover .image-overlay {
-  opacity: 1;
-}
-
-.project-info {
-  padding: 20px;
-}
-
-.project-info h3 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
-.live-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #93348B; 
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.live-btn:hover {
-  background-color: #0052cc;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .projects-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project-card {
-    max-width: 90%;
+  .project-section {
+    padding: 80px 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
   }
-}
+
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content:center;
+  }
+
+  .project-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* optional: ensures bottom section sticks */
+  min-height  : 500px; /* allow full height if needed */
+  transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: scale(1.02);
+  }
+
+  .carousel-image-wrapper {
+    position: relative;
+    overflow: hidden;
+  
+  }
+
+  .carousel-image-wrapper img {
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-image-wrapper:hover img {
+    transform: scale(1.05);
+  }
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    
+  }
+
+  .carousel-image-wrapper:hover .image-overlay {
+    opacity: 1;
+  }
+
+  .project-info {
+
+
+    padding: 20px;
+  }
+
+  .project-info h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+
+  .live-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #93348B; 
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+
+  .live-btn:hover {
+    background-color: #0052cc;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .projects-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-card {
+      max-width: 90%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }

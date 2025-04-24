@@ -6,41 +6,46 @@ import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 
+import moe1 from "../assets/img/projects/moe1.png";
+import moe2 from "../assets/img/projects/moe2.png";
+import moe3 from "../assets/img/projects/moe3.png";
+
+import rag1 from "../assets/img/projects/rag1.png";
+import rag2 from "../assets/img/projects/rag2.png";
+import rag3 from "../assets/img/projects/rag3.png";
+
+import suri1 from "../assets/img/projects/suri1.png";
+import suri2 from "../assets/img/projects/suri2.png";
+import suri3 from "../assets/img/projects/suri3.png";
+
 const projects = [
   {
-    title: "Portfolio Website",
-    images: [projImg1, projImg2, projImg3],
-    liveLink: "https://your-portfolio-link.com",
+    title: "Moeguide",
+    images: [moe1, moe2],
+    liveLink: "https://moeguide-app.vercel.app/",
     description:
-      "A modern, responsive portfolio site built with React and deployed on Netlify.",
+      " Developed a platform targeted at Chinese tourists visiting Japan, enabling them to hire individuals in traditional Japanese costumes for events, photoshoots, and cultural experiences",
   },
   {
-    title: "Portfolio Website",
-    images: [projImg1, projImg2, projImg3],
-    liveLink: "https://your-portfolio-link.com",
+    title: "RAG AI",
+    images: [rag1, rag2, rag3],
+    liveLink: "https://dev.knowledgelinks.ai/channels",
     description:
-      "A modern, responsive portfolio site built with React and deployed on Netlify.",
+      "Developed an AI-powered application leveraging the ChatGPT model and API to create a Retrieval Augmented Generation (RAG) system.",
   },
   {
-    title: "Portfolio Website",
-    images: [projImg1, projImg2, projImg3],
-    liveLink: "https://your-portfolio-link.com",
+    title: "Suirikyou",
+    images: [suri1, suri2, suri3],
+    liveLink: "https://suirikyou.vercel.app/",
     description:
-      "A modern, responsive portfolio site built with React and deployed on Netlify.",
-  },
-  {
-    title: "Portfolio Website",
-    images: [projImg1, projImg2, projImg3],
-    liveLink: "https://your-portfolio-link.com",
-    description:
-      "A modern, responsive portfolio site built with React and deployed on Netlify.",
+      "Developed a full-stack certification platform for the Japan Water Facilities Environmental Hygiene Association, enabling vendors to register, log in, take online exams, and obtain a Facility Hygiene Management Compliance Certificate. Designed a secure, scalable system tailored for regulatory workflows, exam validation, and certificate issuance",
   },
 ];
 
 export default function Projects() {
   return (
     <section className="project-section">
-      <h2 className="section-title">My Projects</h2>
+      <h2 className="section-title">Selected Projects</h2>
       <div className="projects-container">
         {projects.map((project, index) => (
           <div className="project-card" key={index}>
