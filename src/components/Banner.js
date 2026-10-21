@@ -81,9 +81,9 @@ export const Banner = () => {
                     in crafting pixel-perfect, responsive UIs with React,
                     Tailwind CSS, and atomic design. I write clean, maintainable
                     code and follow best practices for API integration and SSR.
-                    Currently, I work at a Japanese software firm, delivering
-                    high-quality products through close collaboration with
-                    design and development teams.
+                    Currently, I work as a Web Developer at Therap Bangladesh,
+                    delivering high-quality products through close collaboration
+                    with engineering and product teams.
                   </p>
 
                   <button

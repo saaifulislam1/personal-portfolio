@@ -4,9 +4,26 @@ import "aos/dist/aos.css";
 
 const experiences = [
   {
+    company: "Therap Bangladesh",
+    role: "Web Developer",
+    duration: "Sept 2026 - Present",
+    projects: [
+      {
+        title: "Web Development & Engineering",
+        bullets: [
+          "Working as a Web Developer, contributing to the development and enhancement of web applications and software solutions.",
+          "Collaborating with cross-functional teams to build, optimize, and maintain responsive, scalable, and secure features.",
+          "Writing clean, maintainable code following modern software engineering best practices.",
+        ],
+        tools: "JavaScript, React, Web Technologies, Database Systems",
+      },
+    ],
+  },
+  {
     company:
       "Ninja Digital Innovation Ltd (A Subsidiary of Brandcloud Inc, Japan)",
-    duration: "May 2023 - Present",
+    role: "Full Stack Software Engineer",
+    duration: "May 2023 - Aug 2026",
     projects: [
       {
         title: "BrandCloud Report Tool Project",
@@ -60,6 +77,7 @@ const experiences = [
   },
   {
     company: "Redox Digital Solution",
+    role: "Frontend Developer",
     duration: "Jan 2023 - Apr 2023",
     projects: [
       {
@@ -90,11 +108,12 @@ const WorkExperience = () => {
             {experiences.map((exp, idx) => (
               <div key={idx} className="work-entry" data-aos="fade-up">
                 <h3 className="company-name">{exp.company}</h3>
+                {exp.role && <h4 className="work-role">{exp.role}</h4>}
                 <p className="work-duration">{exp.duration}</p>
                 {exp.projects.map((proj, i) => (
                   <div key={i} className="project-details" data-aos="fade-left">
                     {proj.title && (
-                      <h4 className="project-title">{proj.title}</h4>
+                      <h5 className="project-title">{proj.title}</h5>
                     )}
                     {proj.link && (
                       <a

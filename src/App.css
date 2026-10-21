@@ -881,6 +881,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   word-break: break-word;
 }
 
+.work-role {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #00bfff;
+  margin-bottom: 4px;
+}
+
 .work-duration {
   font-style: italic;
   color: #999;
