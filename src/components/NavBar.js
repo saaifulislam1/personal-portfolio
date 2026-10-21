@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../assets/img/logo.png";
 import linkedIn from "../assets/img/nav-icon1.svg";
 import github from "../assets/img/git2.svg";
 import { HashLink } from "react-router-hash-link";
@@ -9,6 +8,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -26,21 +26,29 @@ export const NavBar = () => {
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
+    setExpanded(false);
   };
 
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar
+        expand="md"
+        expanded={expanded}
+        onToggle={(isOpen) => setExpanded(isOpen)}
+        className={scrolled ? "scrolled" : ""}
+      >
         <Container>
-          <Navbar.Brand href="/">
-            {/* <img src={logo} alt="Logo" /> */}
+          <Navbar.Brand href="/" onClick={() => setExpanded(false)}>
             <h1 className="logo-text">
               <span className="logo-symbol">&lt;</span>
               Saiful&nbsp;Islam
               <span className="logo-symbol">/&gt;</span>
             </h1>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            onClick={() => setExpanded((prev) => !prev)}
+          >
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
@@ -98,14 +106,19 @@ export const NavBar = () => {
                 <a
                   href="https://www.linkedin.com/in/saifulislamrifat"
                   target="_blank"
+                  rel="noreferrer"
                 >
-                  <img src={linkedIn} alt="linkedIn" />
+                  <img src={linkedIn} alt="LinkedIn" />
                 </a>
-                <a href="https://github.com/saaifulislam1" target="_blank">
-                  <img src={github} alt="github" />
+                <a
+                  href="https://github.com/saaifulislam1"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={github} alt="GitHub" />
                 </a>
               </div>
-              <HashLink to="#connect">
+              <HashLink to="#connect" onClick={() => setExpanded(false)}>
                 <button className="vvd">
                   <span>Let’s Connect</span>
                 </button>

@@ -32,7 +32,6 @@ const experiences = [
         tools:
           "NextJs, Next-auth, tRPC, Prisma, PostgreSQL, Firebase, Vercel, AWS, Docker",
       },
-
       {
         title: "Raggie",
         link: "https://dev.knowledgelinks.ai/",
@@ -82,39 +81,45 @@ const WorkExperience = () => {
 
   return (
     <section className="work-section" id="work">
-      <h2 className="work-title" data-aos="fade-down">
-        <span className="title-highlight">Work Experience</span>
-      </h2>
-      <div className="timeline">
-        {experiences.map((exp, idx) => (
-          <div key={idx} className="work-entry" data-aos="fade-up">
-            <h3 className="company-name">{exp.company}</h3>
-            <p className="work-duration">{exp.duration}</p>
-            {exp.projects.map((proj, i) => (
-              <div key={i} className="project-details" data-aos="fade-left">
-                {proj.title && <h4 className="project-title">{proj.title}</h4>}
-                {proj.link && (
-                  <a
-                    className="project-link"
-                    href={proj.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Project
-                  </a>
-                )}
-                <ul className="project-bullets">
-                  {proj.bullets.map((bullet, bIdx) => (
-                    <li key={bIdx}>{bullet}</li>
-                  ))}
-                </ul>
-                <p className="tools-used">
-                  <strong>Tools:</strong> {proj.tools}
-                </p>
+      <div className="container">
+        <h2 className="work-title" data-aos="fade-down">
+          <span className="title-highlight">Work Experience</span>
+        </h2>
+        <div className="timeline-container">
+          <div className="timeline">
+            {experiences.map((exp, idx) => (
+              <div key={idx} className="work-entry" data-aos="fade-up">
+                <h3 className="company-name">{exp.company}</h3>
+                <p className="work-duration">{exp.duration}</p>
+                {exp.projects.map((proj, i) => (
+                  <div key={i} className="project-details" data-aos="fade-left">
+                    {proj.title && (
+                      <h4 className="project-title">{proj.title}</h4>
+                    )}
+                    {proj.link && (
+                      <a
+                        className="project-link"
+                        href={proj.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        View Project
+                      </a>
+                    )}
+                    <ul className="project-bullets">
+                      {proj.bullets.map((bullet, bIdx) => (
+                        <li key={bIdx}>{bullet}</li>
+                      ))}
+                    </ul>
+                    <p className="tools-used">
+                      <strong>Tools:</strong> {proj.tools}
+                    </p>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

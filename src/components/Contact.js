@@ -25,23 +25,31 @@ export const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setButtonText("Response Sent"); //sending...
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: "Message sent successfully" });
-    } else {
+    setButtonText("Sending...");
+    try {
+      let response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(formDetails),
+      });
+      setButtonText("Send");
+      let result = await response.json();
+      setFormDetails(formInitialDetails);
+      if (result.code === 200) {
+        setStatus({ success: true, message: "Message sent successfully" });
+      } else {
+        setStatus({
+          success: false,
+          message: "Something went wrong, please try again later.",
+        });
+      }
+    } catch (err) {
+      setButtonText("Send");
       setStatus({
-        succes: false,
-        message: "Something went wrong, please try again later.",
+        success: false,
+        message: "Failed to send message. Please try again later.",
       });
     }
   };
@@ -50,20 +58,22 @@ export const Contact = () => {
     <section className="contact" id="connect">
       <Container>
         <Row className="align-items-center">
-          <Col size={12} md={6}>
+          <Col xs={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) => (
-                <img
-                  className={
-                    isVisible ? "animate__animated animate__zoomIn" : ""
-                  }
-                  src={contactImg}
-                  alt="Contact Us"
-                />
+                <div className="contact-img-bx">
+                  <img
+                    className={
+                      isVisible ? "animate__animated animate__zoomIn" : ""
+                    }
+                    src={contactImg}
+                    alt="Contact Us"
+                  />
+                </div>
               )}
             </TrackVisibility>
           </Col>
-          <Col size={12} md={6}>
+          <Col xs={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) => (
                 <div
@@ -73,8 +83,8 @@ export const Contact = () => {
                 >
                   <h2>Get In Touch</h2>
                   <form onSubmit={handleSubmit} className="form-contact">
-                    <Row>
-                      <Col size={12} sm={6} className="px-1">
+                    <Row className="g-2">
+                      <Col xs={12} sm={6}>
                         <input
                           type="text"
                           value={formDetails.firstName}
@@ -82,19 +92,20 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("firstName", e.target.value)
                           }
+                          required
                         />
                       </Col>
-                      <Col size={12} sm={6} className="px-1">
+                      <Col xs={12} sm={6}>
                         <input
                           type="text"
-                          value={formDetails.lasttName}
+                          value={formDetails.lastName}
                           placeholder="Last Name"
                           onChange={(e) =>
                             onFormUpdate("lastName", e.target.value)
                           }
                         />
                       </Col>
-                      <Col size={12} sm={6} className="px-1">
+                      <Col xs={12} sm={6}>
                         <input
                           type="email"
                           value={formDetails.email}
@@ -102,9 +113,10 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("email", e.target.value)
                           }
+                          required
                         />
                       </Col>
-                      <Col size={12} sm={6} className="px-1">
+                      <Col xs={12} sm={6}>
                         <input
                           type="tel"
                           value={formDetails.phone}
@@ -114,7 +126,7 @@ export const Contact = () => {
                           }
                         />
                       </Col>
-                      <Col size={12} className="px-1">
+                      <Col xs={12}>
                         <textarea
                           rows="6"
                           value={formDetails.message}
@@ -122,13 +134,14 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("message", e.target.value)
                           }
+                          required
                         ></textarea>
                         <button type="submit">
                           <span>{buttonText}</span>
                         </button>
                       </Col>
                       {status.message && (
-                        <Col>
+                        <Col xs={12}>
                           <p
                             className={
                               status.success === false ? "danger" : "success"
