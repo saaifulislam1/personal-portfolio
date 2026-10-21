@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
+import techHeroImg from "../assets/img/tech-vector.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -107,7 +107,13 @@ export const Banner = () => {
                     isVisible ? "animate__animated animate__zoomIn" : ""
                   }
                 >
-                  <img src={headerImg} alt="Header illustration" />
+                  <div className="tech-hero-wrapper">
+                    <img
+                      src={techHeroImg}
+                      alt="Full Stack Developer Tech Illustration"
+                      className="tech-vector-img"
+                    />
+                  </div>
                 </div>
               )}
             </TrackVisibility>

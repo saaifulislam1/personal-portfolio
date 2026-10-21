@@ -1,0 +1,319 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600" fill="none">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="cyber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#AA367C" />
+      <stop offset="50%" stop-color="#4A2FBD" />
+      <stop offset="100%" stop-color="#00bfff" />
+    </linearGradient>
+
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00bfff" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <linearGradient id="neon-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <linearGradient id="screen-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18182c" />
+      <stop offset="100%" stop-color="#0e0e1a" />
+    </linearGradient>
+
+    <linearGradient id="screen-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00bfff" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#AA367C" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="desk-top" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24243e" />
+      <stop offset="100%" stop-color="#141424" />
+    </linearGradient>
+
+    <linearGradient id="desk-side" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141424" />
+      <stop offset="100%" stop-color="#0a0a14" />
+    </linearGradient>
+
+    <linearGradient id="card-glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(30, 30, 50, 0.85)" />
+      <stop offset="100%" stop-color="rgba(15, 15, 30, 0.95)" />
+    </linearGradient>
+
+    <linearGradient id="db-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4A2FBD" />
+      <stop offset="100%" stop-color="#00bfff" />
+    </linearGradient>
+
+    <!-- Filters for Neon Glow -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="shadow-base" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="15" stdDeviation="25" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- AMBIENT GLOW BACKDROP -->
+  <g opacity="0.6">
+    <circle cx="350" cy="300" r="180" fill="url(#cyber-grad)" opacity="0.2" filter="url(#glow-purple)" />
+    <ellipse cx="350" cy="460" rx="220" ry="60" fill="#00bfff" opacity="0.12" filter="url(#glow-cyan)" />
+  </g>
+
+  <!-- ISOMETRIC BASE / CIRCUIT PLATFORM -->
+  <g id="base-platform">
+    <!-- Outer Isometric Ring -->
+    <ellipse cx="350" cy="450" rx="260" ry="85" stroke="url(#cyber-grad)" stroke-width="1.5" stroke-dasharray="12 8" opacity="0.4" />
+    <ellipse cx="350" cy="450" rx="220" ry="70" stroke="#00bfff" stroke-width="1" stroke-dasharray="6 6" opacity="0.3" />
+
+    <!-- Circuit grid lines radiating -->
+    <path d="M180 440 L260 460 L350 490 L440 460 L520 440" stroke="#00bfff" stroke-width="1" opacity="0.25" />
+    <path d="M220 420 L290 440 L350 460 L410 440 L480 420" stroke="#AA367C" stroke-width="1" opacity="0.25" />
+    <path d="M350 410 L350 510" stroke="#00bfff" stroke-width="1.5" opacity="0.3" />
+    <path d="M260 460 L260 485" stroke="#38bdf8" stroke-width="1" opacity="0.4" />
+    <path d="M440 460 L440 485" stroke="#ec4899" stroke-width="1" opacity="0.4" />
+
+    <!-- Glowing Nodes -->
+    <circle cx="260" cy="485" r="3" fill="#00bfff" filter="url(#glow-cyan)" />
+    <circle cx="440" cy="485" r="3" fill="#ec4899" filter="url(#glow-purple)" />
+    <circle cx="350" cy="510" r="4" fill="#00bfff" filter="url(#glow-cyan)" />
+    <circle cx="180" cy="440" r="2.5" fill="#38bdf8" />
+    <circle cx="520" cy="440" r="2.5" fill="#AA367C" />
+  </g>
+
+  <!-- ISOMETRIC DESK -->
+  <g id="developer-desk" filter="url(#shadow-base)">
+    <!-- Desk Top Plane -->
+    <polygon points="350,290 530,350 350,410 170,350" fill="url(#desk-top)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" />
+    <!-- Desk Bevel Edge / Front Rim Glow -->
+    <polygon points="170,350 350,410 350,418 170,358" fill="url(#desk-side)" stroke="#00bfff" stroke-width="0.8" opacity="0.8" />
+    <polygon points="350,410 530,350 530,358 350,418" fill="url(#desk-side)" stroke="#AA367C" stroke-width="0.8" opacity="0.8" />
+    <!-- Desk Neon Edge Highlight -->
+    <path d="M170 350 L350 410 L530 350" stroke="url(#cyber-grad)" stroke-width="2.5" fill="none" />
+
+    <!-- Desk Legs / Stand Supports -->
+    <path d="M220 370 L220 450 M480 370 L480 450" stroke="rgba(255, 255, 255, 0.2)" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- MAIN MONITOR (ISOMETRIC / 2.5D CURVED DISPLAY) -->
+  <g id="main-monitor" filter="url(#shadow-base)">
+    <!-- Stand -->
+    <polygon points="340,335 360,335 365,360 335,360" fill="#141424" stroke="rgba(255, 255, 255, 0.1)" />
+    <ellipse cx="350" cy="360" rx="30" ry="10" fill="#0f0f1a" stroke="rgba(255, 255, 255, 0.2)" />
+
+    <!-- Screen Bezel -->
+    <rect x="220" y="140" width="260" height="170" rx="14" fill="#0d0d18" stroke="url(#cyber-grad)" stroke-width="2" />
+    <!-- Screen Inner Display -->
+    <rect x="226" y="146" width="248" height="158" rx="10" fill="url(#screen-grad)" />
+    <rect x="226" y="146" width="248" height="158" rx="10" fill="url(#screen-glow)" />
+
+    <!-- Window Top Header Bar -->
+    <path d="M226 156 Q226 146 236 146 L464 146 Q474 146 474 156 L474 168 L226 168 Z" fill="#1b1b2f" />
+    <circle cx="242" cy="157" r="3.5" fill="#ff5f56" />
+    <circle cx="254" cy="157" r="3.5" fill="#ffbd2e" />
+    <circle cx="266" cy="157" r="3.5" fill="#27c93f" />
+    <text x="350" y="161" fill="#71717a" font-family="'Fira Code', monospace" font-size="9" text-anchor="middle">Portfolio.tsx</text>
+
+    <!-- Code Editor Content -->
+    <!-- Line 1: import React -->
+    <text x="240" y="186" font-family="'Fira Code', monospace" font-size="10" font-weight="600">
+      <tspan fill="#ec4899">import</tspan>
+      <tspan fill="#f43f5e"> { </tspan>
+      <tspan fill="#38bdf8">Developer</tspan>
+      <tspan fill="#f43f5e"> } </tspan>
+      <tspan fill="#ec4899">from</tspan>
+      <tspan fill="#a7f3d0"> "t3-stack"</tspan>
+    </text>
+
+    <!-- Line 2: const engineer -->
+    <text x="240" y="204" font-family="'Fira Code', monospace" font-size="10" font-weight="600">
+      <tspan fill="#818cf8">const</tspan>
+      <tspan fill="#fde047"> engineer</tspan>
+      <tspan fill="#cbd5e1">: </tspan>
+      <tspan fill="#38bdf8">Developer</tspan>
+      <tspan fill="#cbd5e1"> = {</tspan>
+    </text>
+
+    <!-- Line 3: name -->
+    <text x="252" y="222" font-family="'Fira Code', monospace" font-size="10">
+      <tspan fill="#94a3b8">name: </tspan>
+      <tspan fill="#34d399">"Saiful Islam"</tspan>
+      <tspan fill="#94a3b8">,</tspan>
+    </text>
+
+    <!-- Line 4: role -->
+    <text x="252" y="240" font-family="'Fira Code', monospace" font-size="10">
+      <tspan fill="#94a3b8">role: </tspan>
+      <tspan fill="#38bdf8">"Web Developer"</tspan>
+      <tspan fill="#94a3b8">,</tspan>
+    </text>
+
+    <!-- Line 5: company -->
+    <text x="252" y="258" font-family="'Fira Code', monospace" font-size="10">
+      <tspan fill="#94a3b8">company: </tspan>
+      <tspan fill="#c084fc">"Therap BD"</tspan>
+      <tspan fill="#94a3b8">,</tspan>
+    </text>
+
+    <!-- Line 6: stack array -->
+    <text x="252" y="276" font-family="'Fira Code', monospace" font-size="10">
+      <tspan fill="#94a3b8">stack: [</tspan>
+      <tspan fill="#38bdf8">"Next"</tspan>
+      <tspan fill="#94a3b8">, </tspan>
+      <tspan fill="#a855f7">"React"</tspan>
+      <tspan fill="#94a3b8">, </tspan>
+      <tspan fill="#38bdf8">"TS"</tspan>
+      <tspan fill="#94a3b8">]</tspan>
+    </text>
+
+    <!-- Line 7: close brace -->
+    <text x="240" y="294" font-family="'Fira Code', monospace" font-size="10" fill="#cbd5e1">};</text>
+
+    <!-- Blinking Cursor -->
+    <rect x="256" y="285" width="6" height="11" fill="#00bfff" opacity="0.8" />
+  </g>
+
+  <!-- SECONDARY VERTICAL MONITOR / TERMINAL (LEFT) -->
+  <g id="left-monitor" filter="url(#shadow-base)">
+    <!-- Vertical Screen -->
+    <rect x="130" y="180" width="80" height="150" rx="8" fill="#0d0d18" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" />
+    <rect x="134" y="184" width="72" height="142" rx="6" fill="#0b0b14" />
+    
+    <!-- Mini Terminal Header -->
+    <rect x="134" y="184" width="72" height="14" fill="#181828" />
+    <circle cx="140" cy="191" r="2" fill="#ec4899" />
+    <circle cx="146" cy="191" r="2" fill="#00bfff" />
+
+    <!-- Terminal Code / Metrics -->
+    <text x="138" y="208" font-family="'Fira Code', monospace" font-size="7" fill="#38bdf8">&gt; npm run dev</text>
+    <text x="138" y="218" font-family="'Fira Code', monospace" font-size="6.5" fill="#34d399">✓ ready: 3000</text>
+    <text x="138" y="228" font-family="'Fira Code', monospace" font-size="6.5" fill="#a855f7">tRPC router ok</text>
+    <text x="138" y="238" font-family="'Fira Code', monospace" font-size="6.5" fill="#94a3b8">prisma sync...</text>
+
+    <!-- Mini Server Metrics Bars -->
+    <rect x="138" y="250" width="64" height="4" rx="2" fill="#202038" />
+    <rect x="138" y="250" width="48" height="4" rx="2" fill="#00bfff" />
+    
+    <rect x="138" y="260" width="64" height="4" rx="2" fill="#202038" />
+    <rect x="138" y="260" width="56" height="4" rx="2" fill="#ec4899" />
+
+    <rect x="138" y="270" width="64" height="4" rx="2" fill="#202038" />
+    <rect x="138" y="270" width="38" height="4" rx="2" fill="#34d399" />
+
+    <!-- Wave Graph -->
+    <path d="M138 310 Q148 295 158 305 T178 300 T198 290 L202 315 L138 315 Z" fill="url(#screen-glow)" stroke="#00bfff" stroke-width="1" />
+  </g>
+
+  <!-- LAPTOP ON DESK -->
+  <g id="laptop" filter="url(#shadow-base)">
+    <!-- Laptop Base -->
+    <polygon points="310,360 390,360 410,385 330,385" fill="#1e1e32" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1" />
+    <!-- Trackpad & Keyboard Glow -->
+    <polygon points="325,364 380,364 385,373 330,373" fill="#2d2d48" />
+    <rect x="345" y="375" width="20" height="8" rx="2" fill="#141424" stroke="rgba(255,255,255,0.15)" stroke-width="0.5" />
+    <!-- Glowing Screen Lid -->
+    <polygon points="310,360 390,360 380,325 320,325" fill="#0f0f1c" stroke="#00bfff" stroke-width="1.2" />
+    <polygon points="314,358 386,358 377,328 323,328" fill="#1b1b34" />
+    <!-- Laptop Screen Logo -->
+    <circle cx="350" cy="343" r="5" fill="#00bfff" opacity="0.8" filter="url(#glow-cyan)" />
+  </g>
+
+  <!-- KEYBOARD & MOUSE -->
+  <g id="peripherals">
+    <!-- Keyboard -->
+    <polygon points="250,365 300,365 310,380 260,380" fill="#18182a" stroke="rgba(255, 255, 255, 0.15)" stroke-width="0.8" />
+    <!-- RGB Strip -->
+    <path d="M260 380 L310 380" stroke="url(#cyber-grad)" stroke-width="2" />
+    <!-- Mouse -->
+    <ellipse cx="430" cy="375" rx="8" ry="12" fill="#1b1b30" stroke="#00bfff" stroke-width="0.8" />
+  </g>
+
+  <!-- FLOATING 3D TECH BADGES / ORBS -->
+
+  <!-- 1. FLOATING REACT ATOM (TOP RIGHT) -->
+  <g id="badge-react" filter="url(#shadow-base)">
+    <g transform="translate(510, 160)">
+      <!-- Backdrop Orb Glow -->
+      <circle cx="30" cy="30" r="34" fill="url(#card-glass)" stroke="rgba(0, 191, 255, 0.5)" stroke-width="1.5" />
+      <circle cx="30" cy="30" r="28" fill="rgba(0, 191, 255, 0.08)" />
+      
+      <!-- React Center Nucleus -->
+      <circle cx="30" cy="30" r="5" fill="#00bfff" filter="url(#glow-cyan)" />
+      
+      <!-- React Orbital Rings -->
+      <ellipse cx="30" cy="30" rx="20" ry="7.5" fill="none" stroke="#00bfff" stroke-width="1.6" transform="rotate(0 30 30)" />
+      <ellipse cx="30" cy="30" rx="20" ry="7.5" fill="none" stroke="#00bfff" stroke-width="1.6" transform="rotate(60 30 30)" />
+      <ellipse cx="30" cy="30" rx="20" ry="7.5" fill="none" stroke="#00bfff" stroke-width="1.6" transform="rotate(120 30 30)" />
+    </g>
+  </g>
+
+  <!-- 2. FLOATING TYPESCRIPT BADGE (TOP LEFT) -->
+  <g id="badge-ts" filter="url(#shadow-base)">
+    <g transform="translate(140, 100)">
+      <!-- Glass Card -->
+      <rect x="0" y="0" width="56" height="56" rx="14" fill="url(#card-glass)" stroke="#38bdf8" stroke-width="1.5" />
+      <rect x="6" y="6" width="44" height="44" rx="10" fill="#3178c6" opacity="0.85" />
+      <!-- TS Text -->
+      <text x="28" y="36" fill="#ffffff" font-family="'Centra', 'Inter', sans-serif" font-weight="bold" font-size="22" text-anchor="middle" letter-spacing="-1">TS</text>
+    </g>
+  </g>
+
+  <!-- 3. FLOATING NEXT.JS BADGE (MID RIGHT) -->
+  <g id="badge-next" filter="url(#shadow-base)">
+    <g transform="translate(525, 260)">
+      <circle cx="30" cy="30" r="28" fill="#000000" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" />
+      <!-- Next.js "N" vector icon -->
+      <path d="M22 39 L22 21 L26 21 L35 34 L35 21 L39 21 L39 39 L35 39 L25 25 L25 39 Z" fill="#ffffff" />
+      <path d="M34 29 L39 38" stroke="url(#cyber-grad)" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- 4. FLOATING PRISMA / DATABASE CYLINDER (BOTTOM RIGHT) -->
+  <g id="badge-db" filter="url(#shadow-base)">
+    <g transform="translate(490, 360)">
+      <!-- Tier 1 -->
+      <path d="M10 20 C10 14 50 14 50 20 L50 28 C50 34 10 34 10 28 Z" fill="url(#db-grad)" opacity="0.9" />
+      <ellipse cx="30" cy="20" rx="20" ry="6" fill="#38bdf8" />
+      <!-- Tier 2 -->
+      <path d="M10 32 C10 26 50 26 50 32 L50 40 C50 46 10 46 10 40 Z" fill="url(#db-grad)" opacity="0.8" />
+      <ellipse cx="30" cy="32" rx="20" ry="6" fill="#818cf8" />
+      <!-- Tier 3 -->
+      <path d="M10 44 C10 38 50 38 50 44 L50 52 C50 58 10 58 10 52 Z" fill="url(#db-grad)" opacity="0.7" />
+      <ellipse cx="30" cy="44" rx="20" ry="6" fill="#c084fc" />
+      <!-- Neon indicator dots -->
+      <circle cx="42" cy="24" r="2" fill="#22c55e" />
+      <circle cx="42" cy="36" r="2" fill="#22c55e" />
+      <circle cx="42" cy="48" r="2" fill="#22c55e" />
+    </g>
+  </g>
+
+  <!-- 5. FLOATING CODE TAGS & SYMBOLS (TOP & SIDES) -->
+  <g id="floating-code-symbols">
+    <!-- < /> Tag Pill -->
+    <g transform="translate(300, 70)" filter="url(#shadow-base)">
+      <rect x="0" y="0" width="100" height="34" rx="17" fill="url(#card-glass)" stroke="url(#cyber-grad)" stroke-width="1.5" />
+      <text x="50" y="22" fill="#00bfff" font-family="'Fira Code', monospace" font-size="14" font-weight="bold" text-anchor="middle">&lt; FullStack /&gt;</text>
+    </g>
+
+    <!-- Curly Braces { } -->
+    <g transform="translate(100, 360)" filter="url(#shadow-base)">
+      <circle cx="24" cy="24" r="20" fill="url(#card-glass)" stroke="rgba(236, 72, 153, 0.5)" stroke-width="1.5" />
+      <text x="24" y="32" fill="#ec4899" font-family="'Fira Code', monospace" font-size="20" font-weight="bold" text-anchor="middle">{ }</text>
+    </g>
+
+    <!-- Glowing Stars / Crosses -->
+    <path d="M480 90 L480 102 M474 96 L486 96" stroke="#00bfff" stroke-width="2" stroke-linecap="round" filter="url(#glow-cyan)" />
+    <path d="M200 80 L200 90 M195 85 L205 85" stroke="#ec4899" stroke-width="1.5" stroke-linecap="round" filter="url(#glow-purple)" />
+    <path d="M570 210 L570 218 M566 214 L574 214" stroke="#fde047" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M120 280 L120 288 M116 284 L124 284" stroke="#00bfff" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+</svg>
